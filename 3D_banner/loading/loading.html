@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .loader {
+            text-align: center;
+            margin: 220px auto;
+            position: relative;
+        }
+
+        .loader .domino>div {
+            /* 统一设计高宽 */
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            display: inline-flex;
+            transform: rotate(45deg);
+            animation: domino1 2.4s infinite ease-in-out
+        }
+
+        .loader .domino>div:after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            opacity: 0;
+            position: relative;
+            top: 0;
+            left: -43px;
+            animation: illusion 2.4s infinite ease-in-out
+        }
+
+        .domino>div:nth-child(1) {
+            margin: 13px;
+            background: #5F9FEB;
+            animation-delay: 0.9s;
+        }
+
+        .domino>div:nth-child(1):after {
+            /* margin: 13px; */
+            background: #5F9FEB;
+            animation-delay: 0.9s;
+        }
+
+        .domino>div:nth-child(2) {
+            margin: 13px;
+            background: #8E8AEC;
+            animation-delay: 1.4s;
+        }
+
+        .domino>div:nth-child(2):after {
+            /* margin: 13px; */
+            background: #8E8AEC;
+            animation-delay: 1.4s;
+        }
+
+        .domino>div:nth-child(3) {
+            margin: 13px;
+            background: #C371ED;
+            animation-delay: 2.1s;
+        }
+
+        .domino>div:nth-child(3):after {
+            /* margin: 13px; */
+            background: #C371ED;
+            animation-delay: 2.1s;
+        }
+
+        .domino>div:nth-child(4) {
+            margin: 13px;
+            background: #D564B8;
+            animation-delay: 2.8s;
+        }
+
+        .domino>div:nth-child(4):after {
+            /* margin: 13px; */
+            background: #D564B8;
+            animation-delay: 2.8s;
+        }
+
+        @keyframes domino1 {
+
+            20%,
+            100% {
+                transform: rotate(135deg)
+            }
+        }
+
+        @keyframes illusion {
+
+            0%,
+            25% {
+                opacity: 1;
+            }
+
+            25.3%,
+            33.33%,
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="domino">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>
