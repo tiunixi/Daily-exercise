@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #lunbo {
+            width: 20em;
+            height: 15em;
+            position: absolute;
+            top: 28%;
+            left: 71%;
+            margin-left: -130px;
+            /* margin-top: -106px; */
+            transform-style: preserve-3d;
+            transform-origin: center;
+            animation: do 10s linear infinite
+        }
+
+        #lunbo:hover {
+            animation-play-state: paused
+        }
+
+        #re {
+            position: relative;
+
+            transform: rotate3d(1, 1, 0, -30deg);
+            transform-style: preserve-3d;
+
+        }
+
+        #re div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            float: left;
+        }
+
+        .all {
+            width: 405px;
+            height: 240px;
+        }
+
+        #lunbo #t1 {
+            background: url('./img/1.jpg');
+            background-size: 405px;
+            /* transform: translateZ(120px); */
+            transform: translateZ(201px);
+
+            /*0 
+            transform: rotateY(0deg) translate3d(0, 48px, 87px); */
+
+        }
+
+        #lunbo #t2 {
+            background: url('./img/2.jpg');
+            /* transform: translateY(-120px) rotateX(90deg); */
+            transform: translateX(-201px) rotateY(-90deg);
+            background-size: 405px;
+
+            /*0
+             transform: rotateY(90deg) translateZ(250px); */
+
+        }
+
+        #lunbo #t3 {
+            /*0
+             transform: rotateY(180deg) translate3d(2px, 48px, 320px); */
+            background: url('./img/3.jpg');
+            background-size: 405px;
+            /* transform: translateZ(-120px) rotateX(180deg); */
+            transform: translateZ(-201px) rotateY(180deg);
+
+
+
+        }
+
+        #lunbo #t4 {
+            background-size: 405px;
+            background: url('./img/4.jpg');
+            /*0 
+            transform: rotateY(270deg) translate3d(-120px, 50px, 205px) */
+            /* transform: translateY(120px) rotateX(-90deg); */
+            transform: translateX(201px) rotateY(90deg)
+        }
+
+        @keyframes do {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+
+            }
+        }
+
+        .pic {
+            height: 360px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>壁纸查看</h1>
+    <div id="lunbo">
+        <div id="re">
+            <div id="t1" class=" all"></div>
+            <div id="t2" class=" all"></div>
+            <div id="t3" class=" all"></div>
+            <div id="t4" class=" all"></div>
+        </div>
+    </div>
+    <div class="cc">
+        <img src="./img/1.jpg" alt="" srcset="" class="pic">
+    </div>
+
+</body>
+<script src="./js/jquery.min.js"></script>
+<script>
+    $(function () {
+        //获取div的id为判断依据
+        $('#re div').on('click', function () {
+            console.log(this.id)
+            if (this.id === 't1') {
+                $('.pic')[0].src = './img/1.jpg'
+                console.log($('.pic')[0].src)
+            }
+            else if (this.id === 't2') {
+                $('.pic')[0].src = './img/2.jpg'
+                console.log($('.pic')[0].src)
+            }
+            else if (this.id === 't3') {
+                $('.pic')[0].src = './img/3.jpg'
+                console.log($('.pic')[0].src)
+            }
+            else if (this.id === 't4') {
+                $('.pic')[0].src = './img/4.jpg'
+                console.log($('.pic')[0].src)
+            }
+
+        })
+    })
+</script>
+
+</html>
